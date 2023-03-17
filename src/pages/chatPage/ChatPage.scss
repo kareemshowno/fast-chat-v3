@@ -1,0 +1,13 @@
+@mixin mobile {
+    @media screen and (max-width:576px) {
+        @content
+    }
+}
+.chat-page-container {
+    width:100%;
+    height: calc(100vh - 12vh);
+    display: flex;
+    @include mobile {
+        flex-direction: column;
+    }
+}

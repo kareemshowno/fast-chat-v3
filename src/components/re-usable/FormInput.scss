@@ -1,0 +1,12 @@
+.form-c{
+    height: 2rem;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    padding: 1px 5px;
+    &:focus{
+        
+      border: 1px solid #841ebe;
+      outline-color: rgba(206, 121, 255, 0.288)
+     
+    }
+}

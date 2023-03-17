@@ -1,0 +1,120 @@
+@mixin mobile {
+    @media screen and (max-width: 576px) {
+      @content;
+    }
+  }
+.help-container {
+    width: 100%;
+    height: calc(100vh - 12vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    .instructions{
+        width: 65%;
+        line-height: 1.7rem;
+        .instructions-list {
+
+            li{
+                margin: .5rem 0rem;
+            }
+        }
+        h2{
+            padding: .5rem 1.2rem;
+            
+            color:#841ebe ;
+        }
+        h3 {
+            padding: .5rem 1.2rem;
+            font-size: 1rem;
+            margin-bottom: auto;
+            
+            color:#831ebe91 ;
+            span {
+                color:#841ebe ;
+            }
+        }
+        @include mobile {
+            width: 90%;
+            h3{
+                font-size: .8rem;
+            }
+        }
+    }
+    .support {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 3rem;
+        .support-title{
+            color: #414141af;
+            font-size: .9rem;
+            text-align: center;
+        }
+        .support-form{
+            display: flex;
+            flex-direction: column;
+            
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin: .5rem 0rem;
+                .form-label{
+                    
+                    color: #841ebe;
+                    font-weight: 500;
+                }
+                .form-control{
+                    
+                    border: 1px solid #dedede;
+                    border-radius: 8px;
+                    padding: 5px 5px;
+                    &:focus{
+                        
+                      border: 1px solid #841ebe;
+                      outline-color: rgba(206, 121, 255, 0.288)
+                     
+                    }
+                }
+            }
+            .submit-btn{
+                color: #fff;
+           
+                font-family: 'Montserrat', sans-serif;
+                background: linear-gradient(264deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+                padding: .5rem .9rem;
+                font-weight: 500;
+                margin-top: .5rem;
+                font-size: 1rem;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                box-shadow: 0px 0px 3px #313131;
+           
+                transition: .3s all ease-in-out;
+                &:hover{
+                    
+            background: linear-gradient(49deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+            }
+            &:focus{
+                box-shadow: none;
+                background: linear-gradient(264deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+            }
+        }}
+        @include mobile {
+            width: 80%;
+            padding: 1rem;
+
+            
+        }
+    }
+    @include mobile {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        .instructions{
+            height: 50%;
+        }
+    }
+}

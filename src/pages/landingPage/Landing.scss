@@ -1,0 +1,110 @@
+@mixin mobile {
+    @media screen and (max-width: 576px) {
+      @content;
+    }
+  }
+ @mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }
+ }
+.landing-page {
+    width: 100vw;
+    height: calc(100vh - 12vh);
+    display: flex;
+  
+  
+}
+.hero-text-col {
+    padding: 0.4rem 1rem;
+   
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #313131cc;
+    line-height: 2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+ justify-content: center;
+    button {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(264deg, #1368F6 13%, #4b057a 100%);
+    padding: .7rem .7rem;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 25%;
+    transition: .3s all ease-in-out;
+    box-shadow: 0px 0px 3px #313131;
+    &:hover{
+        
+background: linear-gradient(49deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+    }
+    &:focus{
+        box-shadow: none;
+        background: linear-gradient(264deg, #1368F6 13%, #4b057a 100%);
+    }
+    @include mobile {
+        width: 65%;
+        font-size: .9rem;
+        
+    }
+    @include tablet() {
+     width: 65%;   
+    }
+    }
+    span{color: #8b36bd; font-size: 1.5rem;}
+    @include mobile {
+        width: 60%;
+        padding:.4rem .4rem .4rem 1rem;
+        font-size: .8rem;
+        span{
+            display: none;
+        }
+    }
+    
+}
+.hero-img-col{
+height: 100%;
+width: 50%;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+
+    
+img{
+    max-height: 80%;
+    animation: slideFromLeft 1s   1  ;
+}
+@include mobile{
+    height: 100%;
+    width: 30%;
+    justify-content: flex-end;
+    img {
+        height: 50%;
+        width: 100%;
+    }
+}
+@include tablet {
+    img {
+        height: 50%;
+    }
+}
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateX(0);
+     }
+}

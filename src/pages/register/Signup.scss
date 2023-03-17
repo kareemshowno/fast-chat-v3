@@ -1,0 +1,193 @@
+@mixin mobile {
+    @media screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }
+ }
+.sign-up-page{
+    width: 100%;
+    height: calc(100vh - 12vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container{
+    
+    width: 30%;
+    padding: .7rem 1rem;
+    -webkit-box-shadow: 0px 0px 15px -3px rgba(66,66,66,0.5);
+    -moz-box-shadow: 0px 0px 15px -3px rgba(66,66,66,0.5);
+    box-shadow: 0px 0px 15px -3px rgba(66,66,66,0.5);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: .6rem;
+    .form{
+        height: 100%;
+        width: 100%;
+       background-color: transparent;
+      
+        .form-g:first-child{
+            margin: .4rem 0rem;
+        }
+        .form-g{
+            display: flex;
+            flex-direction: column;
+            margin: .5rem 0rem;
+
+               
+        }
+        .form-label{
+            margin: .5rem 0rem;
+            color: #841ebe;
+            font-weight: 500;
+        }
+       
+        .form-submit{
+            
+            display: flex;
+          margin-top: 1.2rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .5rem;
+        }
+        .form-btn {
+            color: #fff;
+           
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(264deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+            padding: .5rem .9rem;
+            font-weight: 500;
+           
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0px 0px 3px #313131;
+            transition: .3s all ease-in-out;
+            &:hover{
+                
+        background: linear-gradient(49deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+            }
+            &:focus {
+                box-shadow: none;
+                background: linear-gradient(264deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+            }
+            }
+            .form-btn-google{
+                 display: flex;
+                 height: 100%;
+                 align-items: center;
+                color: #fff;
+                padding: .5rem .7rem;
+                font-weight: 500;
+                margin-top: auto;
+                font-size: 1rem;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-family: 'Montserrat', sans-serif;
+                background-color: #1368F6;
+                box-shadow: 0px 0px 3px #313131;
+                transition: .3s all ease-in-out;
+                .google-icon{
+                   
+                    margin: 0;
+                    padding-right:.2rem ;
+                    
+            
+                    font-size: 1.2rem;
+                }
+                &:hover {
+                    background-color: rgba(75,5,122,1);
+                }
+            }
+            .form-exis-account{
+                text-align: center;
+                font-weight: 500;
+                font-size: .8rem;
+                .exis-account-link{
+                    text-decoration: none;
+
+                    &:hover{
+                        color: #1368F6;
+                    }
+                    &:focus {
+                        box-shadow: none;
+                        
+                    }
+                }
+            }
+    }
+    @include mobile {
+        width: 80%;
+        .form{
+            .form-btn,.form-btn-google {
+                font-size: .7rem;
+            }
+            input::file-selector-button {
+                font-size: .6rem;
+            }
+            #photoUrl{
+                font-size: .7rem;
+            }
+        }
+       
+    }
+    @include tablet() {
+        width: 60%;  
+        .form{
+            .form-btn,.form-btn-google {
+                font-size: 1rem;
+            }
+            input::file-selector-button {
+                font-size: .6rem;
+            }
+            #photoUrl{
+                font-size: .7rem;
+            }
+        } 
+       }
+}
+.form-input-error{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: rgb(255, 17, 17);
+    margin:0;
+    padding: 0;
+    font-size: .8rem;
+}
+input::file-selector-button {
+    color: #fff;
+           
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(264deg, #1368F6 13%, rgba(75,5,122,1) 100%);
+    padding: .5rem .9rem;
+    font-weight: 500;
+    margin-top: auto;
+    margin-top: .05rem;
+    font-size: .7rem;
+    border: none;
+   
+    cursor: pointer;
+
+    transition: 1s all ease-in-out;}
+    .image-label{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #photo {
+       display: flex;
+       align-items: center;
+       border: none;
+       outline: none;
+
+    }
+    #photoUrl {
+        border: none;
+        border-radius: 1rem;
+        color: #b247f0;
+    }
